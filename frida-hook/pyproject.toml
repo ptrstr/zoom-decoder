@@ -1,0 +1,9 @@
+[project]
+name = "zoom-frida-hook"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "frida-tools>=14.8.1",
+]
