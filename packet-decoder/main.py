@@ -67,10 +67,7 @@ def extract_audio(pcap_path: str, key: str, out_file: str):
     opus_decoder.set_sampling_frequency(16000)
 
     for s in samples:
-        length = s[0] + 10
-        data = s[1:][:length]
-
-        decoded_pcm = opus_decoder.decode(bytearray(b"\x68" + data))
+        decoded_pcm = opus_decoder.decode(bytearray(b"\x68" + s[1:]))
         wave_write.writeframes(decoded_pcm)
 
 
